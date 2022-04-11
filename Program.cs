@@ -75,7 +75,16 @@ namespace TextWrapper
                         Console.Write("Enter the maximum length of each line: ");
                         int maxLength = int.Parse(Console.ReadLine());
 
+                        Console.WriteLine("");
                         List<string> output = Wrapper.WrapTextFile(maxLength);
+
+                        Console.WriteLine("Wrapped text output");
+                        Console.WriteLine("===================");
+                         foreach (string txt in output)
+                        {
+                            Console.WriteLine(txt);
+                        }
+
                         Console.WriteLine("");
                         Console.Write("Do you want to continue using TextWrapper (Yes [Y] or No [N]): ");
                         option = Console.ReadLine();
