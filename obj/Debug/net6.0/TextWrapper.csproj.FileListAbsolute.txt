@@ -1,0 +1,15 @@
+C:\Projects\Recruitment\TextWrapper\bin\Debug\net6.0\TextWrapper.exe
+C:\Projects\Recruitment\TextWrapper\bin\Debug\net6.0\TextWrapper.deps.json
+C:\Projects\Recruitment\TextWrapper\bin\Debug\net6.0\TextWrapper.runtimeconfig.json
+C:\Projects\Recruitment\TextWrapper\bin\Debug\net6.0\TextWrapper.dll
+C:\Projects\Recruitment\TextWrapper\bin\Debug\net6.0\TextWrapper.pdb
+C:\Projects\Recruitment\TextWrapper\obj\Debug\net6.0\TextWrapper.csproj.AssemblyReference.cache
+C:\Projects\Recruitment\TextWrapper\obj\Debug\net6.0\TextWrapper.GeneratedMSBuildEditorConfig.editorconfig
+C:\Projects\Recruitment\TextWrapper\obj\Debug\net6.0\TextWrapper.AssemblyInfoInputs.cache
+C:\Projects\Recruitment\TextWrapper\obj\Debug\net6.0\TextWrapper.AssemblyInfo.cs
+C:\Projects\Recruitment\TextWrapper\obj\Debug\net6.0\TextWrapper.csproj.CoreCompileInputs.cache
+C:\Projects\Recruitment\TextWrapper\obj\Debug\net6.0\TextWrapper.dll
+C:\Projects\Recruitment\TextWrapper\obj\Debug\net6.0\refint\TextWrapper.dll
+C:\Projects\Recruitment\TextWrapper\obj\Debug\net6.0\TextWrapper.pdb
+C:\Projects\Recruitment\TextWrapper\obj\Debug\net6.0\TextWrapper.genruntimeconfig.cache
+C:\Projects\Recruitment\TextWrapper\obj\Debug\net6.0\ref\TextWrapper.dll
