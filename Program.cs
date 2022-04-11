@@ -6,6 +6,8 @@
 
 */
 
+using System.Text;
+
 namespace TextWrapper
 {
     public class Program
@@ -50,6 +52,8 @@ namespace TextWrapper
 
                         Console.Write("Enter content of files: ");
                         var content = Console.ReadLine();
+
+                        //Create input text file using the Wrapper Class CreateTextFile method
                         bool result = Wrapper.CreateTextFile(content);
                         if (result)
                         {
@@ -71,16 +75,59 @@ namespace TextWrapper
                         //Wrap text and write output to file
                         Console.WriteLine("Wrapping input file. An output.txt file will be generated with wrapped text");
                         Console.WriteLine("");
-
+                        
+                        //Dynamically get the maximum number of characters in one line.
                         Console.Write("Enter the maximum length of each line: ");
                         int maxLength = int.Parse(Console.ReadLine());
 
+                        string text = string.Empty;
+                        string inputFileName = "input.txt";
+                        string outputFileName = "output.txt";
+                        string path = System.IO.Path.GetDirectoryName(System.Reflection.Assembly.GetExecutingAssembly().Location);
+                        string inputFilePath = path + @"\" + inputFileName;
+                        string outputFilePath = path + @"\" + outputFileName;
+
+                        //Read input file created in option A
+                        using (StreamReader sr = File.OpenText(inputFilePath))
+                        {
+                            string s;
+                            StringBuilder str = new StringBuilder();
+                            while ((s = sr.ReadLine()) != null)
+                            {
+                                str.AppendLine(s);
+                            }
+                            text = str.ToString();
+                        }
+                        
                         Console.WriteLine("");
-                        List<string> output = Wrapper.WrapTextFile(maxLength);
+
+                        //Wrap text using the Wrapper Class WrapTextFile method
+                        List<string> list = Wrapper.WrapTextFile(text, maxLength);
+                        FileStream stream = null;
+
+                        try
+                        {
+                            // Create a FileStream with mode CreateNew  
+                            stream = new FileStream(outputFilePath, FileMode.OpenOrCreate);
+                            // Create a StreamWriter from FileStream  
+                            using (StreamWriter writer = new StreamWriter(stream, Encoding.UTF8))
+                            {
+                                foreach (string txt in list)
+                                {
+                                    writer.WriteLine(txt);
+                                }
+                            }
+                        }
+                        finally
+                        {
+                            if (stream != null)
+                                stream.Dispose();
+                        }
 
                         Console.WriteLine("Wrapped text output");
                         Console.WriteLine("===================");
-                         foreach (string txt in output)
+                        
+                        foreach (string txt in list)
                         {
                             Console.WriteLine(txt);
                         }

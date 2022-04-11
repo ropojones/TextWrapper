@@ -44,30 +44,9 @@ namespace TextWrapper
         }
 
 
-        public static List<string> WrapTextFile(int maxLineLength)
+        public static List<string> WrapTextFile(string text, int maxLineLength)
         {
-            // File name  
-            string text = string.Empty;
-            string inputFileName = "input.txt";
-            string outputFileName = "output.txt";
-            string path = System.IO.Path.GetDirectoryName(System.Reflection.Assembly.GetExecutingAssembly().Location);
-            string inputFilePath = path + @"\" + inputFileName;
-            string outputFilePath = path + @"\" + outputFileName;
-
-            //Read input file generated
-            using (StreamReader sr = File.OpenText(inputFilePath))
-            {
-                string s;
-                StringBuilder str = new StringBuilder();
-
-                while ((s = sr.ReadLine()) != null)
-                {
-                    str.AppendLine(s);
-                }
-                text = str.ToString();
-            }
-
-            FileStream stream = null;
+            
             var list = new List<string>();
             int currentIndex;
             var lastWrap = 0;
@@ -81,25 +60,7 @@ namespace TextWrapper
                 lastWrap = currentIndex;
             } while (currentIndex < text.Length);
 
-            try
-            {
-                // Create a FileStream with mode CreateNew  
-                stream = new FileStream(outputFilePath, FileMode.OpenOrCreate);
-                // Create a StreamWriter from FileStream  
-                using (StreamWriter writer = new StreamWriter(stream, Encoding.UTF8))
-                {
-                    foreach (string txt in list)
-                    {
-                        writer.WriteLine(txt);
-                    }
-                }
-            }
-            finally
-            {
-                if (stream != null)
-                    stream.Dispose();
-            }
-
+            
             return list;
         }
 
