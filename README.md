@@ -1,2 +1,2 @@
 # TextWrapper
-A console application that reads text from file (input.txt) and wraps text based on a maximum length parameters provided for wrapping each line of text.
+A console application that reads text from file (input.txt) and wraps text based on a maximum length parameter provided for wrapping lines of text. To make this exciting for reviewers, I provisioned options A, B, C to allow the reviewer to optionally select what actions they want to perform. I also created an option to allow users dynamically create input file. After input file is read and text wrapped, the wrapped text is saved to an output file (output.txt). 
